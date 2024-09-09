@@ -20,10 +20,10 @@ export default function Home() {
           <div className="lg:w-3/5 ">
             <div className="rounded-full py-1 px-3 border h-8 2xl:h-16 w-[300px] 2xl:w-[450px] flex items-center divide-x-2 text-sm 2xl:text-2xl">
               <p className="pr-4 font-semibold text-[#105DFB]">We're raising</p>
-              <div className="inline-flex items-center pl-4 gap-x-2">
+              <Link href={'https://doc.clickup.com/9012243709/d/h/8cjqv7x-5192/503b9931b61f3d8'} className="inline-flex items-center pl-4 gap-x-2">
                 <p className="text-[#20201D]">Our investor letter</p>
                 <ChevronRight size={20}/>
-              </div>
+              </Link>
             </div>
             <h1 className="font-bold text-4xl xl:text-6xl 2xl:text-8xl xl:w-3/4 leading-10  mt-4 2xl:mt-12 text-[#20201D]">Explore every home in Europe, designed for expats</h1>
             <p className="mt-6 2xl:mt-12 text-xl xl:text-2xl 2xl:text-5xl leading-8 text-gray-500">We simplify property buying for expats with the only platform offering access to all European markets, removing the need for region-specific sites.</p>
