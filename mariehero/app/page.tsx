@@ -1,42 +1,63 @@
-"use client"
+'use client'
 
-import { ChevronRight } from "lucide-react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { ChevronRightIcon } from '@heroicons/react/20/solid'
+import { useRouter } from 'next/navigation'
 
-export default function Home() {
-  const router = useRouter();
-  
+export default function Example() {
+    const router = useRouter();
+
   return (
-    <div className="w-screen lg:h-screen overflow-x-hidden relative">
-      <header>
-        <nav className="flex items-center justify-between pt-6 md:pl-8 xl:pl-16 xl:mt-4">
-          <Link href={'/'}>
-            <img src="/2-logo-Marie.svg" className="w-40 lg:w-56 2xl:w-96"></img>
-          </Link>
+    <div className="bg-white">
+      <header className="absolute inset-x-0 top-0 z-50">
+        <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+          <div className="flex lg:flex-1">
+            <a href="#" className="-m-1.5 p-1.5">
+              <span className="sr-only">Your Company</span>
+              <img
+                alt=""
+                src="/2-logo-Marie.svg"
+                className="h-20 md:h-32 xl:h-40 w-auto"
+              />
+            </a>
+          </div>
         </nav>
       </header>
-      <div className="px-6 pt-8 md:pt-16 md:px-12 lg:px-16 lg:pt-20 xl:px-24 md:flex md:flex-row lg:justify-evenly lg:items-start">
-        <div className="lg:w-3/5 ">
-          <div className="rounded-full py-1 px-3 border h-8 2xl:h-16 w-[300px] 2xl:w-[450px] flex items-center divide-x-2 text-sm 2xl:text-2xl">
-            <p className="pr-4 font-semibold text-[#105DFB]">We're raising</p>
-            <Link href={'https://doc.clickup.com/9012243709/d/h/8cjqv7x-5192/503b9931b61f3d8'} className="inline-flex items-center pl-4 gap-x-2">
-              <p className="text-[#20201D]">Our investor letter</p>
-              <ChevronRight size={20}/>
-            </Link>
+      <div className="relative isolate pt-14">
+        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:flex lg:items-center lg:gap-x-10 lg:px-8 lg:py-40">
+          <div className="mx-auto max-w-2xl lg:mx-0 lg:flex-auto">
+            <div className="flex">
+              <div className="relative flex items-center gap-x-4 rounded-full px-4 py-1 text-sm leading-6 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                <span className="font-semibold text-[#105DFB]">We’re raising</span>
+                <span aria-hidden="true" className="h-4 w-px bg-gray-900/10" />
+                <a href="https://doc.clickup.com/9012243709/d/h/8cjqv7x-5192/503b9931b61f3d8" className="flex items-center gap-x-1 text-[#20201D]">
+                  <span aria-hidden="true" className="absolute inset-0" />
+                  Our investor letter
+                  <ChevronRightIcon aria-hidden="true" className="-mr-2 h-5 w-5 text-gray-400" />
+                </a>
+              </div>
+            </div>
+            <h1 className="mt-10 max-w-lg text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl">
+                Explore every home in Europe, designed for expats
+            </h1>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+            We simplify property buying for expats with the only platform offering access to all European markets, removing the need for region-specific sites.
+            </p>
+            <div className="mt-10 flex items-center gap-x-6">
+              <button
+                onClick={() => router.push('/earlyaccess')}
+                className="rounded-md bg-[#105DFB] px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-[#105DFB] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#105DFB]"
+              >
+                Get early access
+              </button>
+            </div>
           </div>
-          <h1 className="font-bold text-4xl xl:text-6xl 2xl:text-8xl xl:w-3/4 leading-10  mt-4 2xl:mt-12 text-[#20201D]">Explore every home in Europe, designed for expats</h1>
-          <p className="mt-6 2xl:mt-12 text-xl xl:text-2xl 2xl:text-5xl leading-8 text-gray-500">We simplify property buying for expats with the only platform offering access to all European markets, removing the need for region-specific sites.</p>
-          <div className="mt-10 2xl:mt-20 flex items-center gap-x-6 font-semibold 2xl:text-3xl">
-            <button onClick={() => router.push('/earlyaccess')} className="rounded-md bg-[#105DFB] text-white py-3 px-4 2xl:py-6 2xl:px-8">Get early access</button>
-          </div>
-        </div>
-        <div className="mt-[60px] lg:mt-0 lg:w-2/5 lg:flex lg:justify-around md:relative md:-top-20 lg:-top-20 xl:-top-32">
-          <div className="lg:w-3/4 xl:w-3/5 2xl:w-4/6">
-            <object width={300} height={600} data='/map.svg' className="w-full h-auto"/>
+          <div className="mt-16 sm:mt-24 lg:mt-0 lg:flex-shrink-0 lg:flex-grow">
+            <div className="mx-auto w-[22.875rem] max-w-full drop-shadow-xl">
+              <object width={316} height={684} data='/map.svg' className='w-full h-auto' />
+            </div>
           </div>
         </div>
       </div>
     </div>
-  );
+  )
 }

@@ -32,7 +32,7 @@ const formSchema = z.object({
 })
 
 export default function EarlyAccess() {
-    const [signedUp, setSignedUp] = useState(false);
+    const [signedUp, setSignedUp] = useState(true);
 
     const router = useRouter();
 
@@ -63,7 +63,7 @@ export default function EarlyAccess() {
     useEffect(() => {
         if (signedUp) {
             setTimeout(() => {
-                router.back();
+                router.push('/');
             }, 6000);
         }
     }, [signedUp]);
@@ -71,7 +71,7 @@ export default function EarlyAccess() {
     return (
         <>
         {signedUp ? (
-            <div className="w-screen flex items-center justify-center 2xl:pt-20">
+            <div className="w-screen flex items-center justify-center 2xl:p-20">
                 <div className="text-2xl 2xl:text-6xl font-bold">
                     <p className="mb-4">We appreciate you joining us, you will be one of the first to know when we launch!</p>
                     <p></p>
@@ -80,7 +80,7 @@ export default function EarlyAccess() {
         ) : (
             <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8 2xl:space-y-16 lg:w-1/2 bg-white p-6 2xl:p-12 rounded-lg border-2 border-gray-200">
-                    <div className="font-bold text-2xl 2xl:text-6xl">
+                    <div className="font-bold text-2xl 2xl:text-4xl text-[#105DFB]">
                         <p>Be the first to explore homes.</p>
                     </div>
                     <FormField
@@ -88,9 +88,9 @@ export default function EarlyAccess() {
                     name="firstName"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel className="2xl:text-3xl"> First Name <span className="text-red-500">*</span></FormLabel>
+                        <FormLabel className="2xl:text-xl"> First Name <span className="text-red-500">*</span></FormLabel>
                         <FormControl>
-                            <Input className="2xl:text-3xl 2xl:py-8" placeholder="John" {...field} />
+                            <Input className="2xl:text-xl 2xl:py-8" placeholder="John" {...field} />
                         </FormControl>
                         <FormMessage />
                         </FormItem>
@@ -101,9 +101,9 @@ export default function EarlyAccess() {
                     name="lastName"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel className="2xl:text-3xl">Last Name <span className="text-red-500">*</span></FormLabel>
+                        <FormLabel className="2xl:text-xl">Last Name <span className="text-red-500">*</span></FormLabel>
                         <FormControl>
-                            <Input className="2xl:text-3xl 2xl:py-8" placeholder="Doe" {...field} />
+                            <Input className="2xl:text-xl 2xl:py-8" placeholder="Doe" {...field} />
                         </FormControl>
                         <FormMessage />
                         </FormItem>
@@ -114,9 +114,9 @@ export default function EarlyAccess() {
                     name="emailAddress"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel className="2xl:text-3xl">Email Address <span className="text-red-500">*</span></FormLabel>
+                        <FormLabel className="2xl:text-xl">Email Address <span className="text-red-500">*</span></FormLabel>
                         <FormControl>
-                            <Input className="2xl:text-3xl 2xl:py-8" placeholder="hello@europemarie.com" {...field} />
+                            <Input className="2xl:text-xl 2xl:py-8" placeholder="hello@europemarie.com" {...field} />
                         </FormControl>
                         <FormMessage />
                         </FormItem>
@@ -127,16 +127,16 @@ export default function EarlyAccess() {
                     name="phoneNumber"
                     render={({ field }) => (
                         <FormItem>
-                        <FormLabel className="2xl:text-3xl">Phone Number</FormLabel>
+                        <FormLabel className="2xl:text-xl">Phone Number</FormLabel>
                         <FormControl>
-                            <Input className="2xl:text-3xl 2xl:py-8" placeholder="1234567890" {...field} />
+                            <Input className="2xl:text-xl 2xl:py-8" placeholder="1234567890" {...field} />
                         </FormControl>
                         <FormMessage />
                         </FormItem>
                     )}
                     />
                     <div className="flex flex-row justify-start items-center">
-                        <Button type="submit" className="2xl:text-3xl 2xl:py-8">Submit</Button>
+                        <Button type="submit" className="2xl:text-xl 2xl:py-8 bg-[#105DFB]">Submit</Button>
                     </div>
                 </form>
             </Form>
