@@ -32,7 +32,7 @@ const formSchema = z.object({
 })
 
 export default function EarlyAccess() {
-    const [signedUp, setSignedUp] = useState(true);
+    const [signedUp, setSignedUp] = useState(false);
 
     const router = useRouter();
 
